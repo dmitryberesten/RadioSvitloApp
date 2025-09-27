@@ -40,6 +40,9 @@
         "projectId": "5f3d8c3c-26a6-4ecd-b79a-501403561465"
       }
     },
-    "owner": "dmitry_beresten"
+    "owner": "dmitry_beresten",
+    "plugins": [
+      "expo-tracking-transparency"
+    ]
   }
 }
