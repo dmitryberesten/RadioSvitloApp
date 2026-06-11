@@ -17,7 +17,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.yourname.radiosvitlo",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSUserTrackingUsageDescription": "This app requests permission to track your activity to improve your experience and show relevant content."
       }
     },
     "android": {
@@ -31,18 +32,13 @@
     "web": {
       "favicon": "./assets/icon.png"
     },
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "extra": {
       "eas": {
         "projectId": "5f3d8c3c-26a6-4ecd-b79a-501403561465"
       }
     },
     "owner": "dmitry_beresten",
-    "plugins": [
-      "expo-tracking-transparency"
-    ]
+    "plugins": ["expo-tracking-transparency"]
   }
 }

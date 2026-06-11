@@ -13,15 +13,19 @@
  * 7. Експортувати компонент App за замовчуванням.
  */
 
-
 import React, { useEffect } from "react";
 import { StyleSheet, View, ActivityIndicator, Alert } from "react-native";
 import { WebView } from "react-native-webview";
-import { requestTrackingPermissionsAsync } from 'expo-tracking-transparency';
+import { requestTrackingPermissionsAsync } from "expo-tracking-transparency";
 
 export default function App() {
   useEffect(() => {
-    requestTrackingPermissionsAsync();
+    (async () => {
+      const { status } = await requestTrackingPermissionsAsync();
+      if (status !== "granted") {
+        console.log("Tracking permission not granted");
+      }
+    })();
   }, []);
   return (
     <View style={styles.container}>
@@ -34,9 +38,9 @@ export default function App() {
             <ActivityIndicator size="large" color="#0000ff" />
           </View>
         )}
-        onError={syntheticEvent => {
+        onError={(syntheticEvent) => {
           const { nativeEvent } = syntheticEvent;
-          Alert.alert('Помилка завантаження сайту', nativeEvent.description);
+          Alert.alert("Помилка завантаження сайту", nativeEvent.description);
         }}
       />
     </View>
@@ -51,14 +55,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   loading: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
     zIndex: 10,
   },
 });
