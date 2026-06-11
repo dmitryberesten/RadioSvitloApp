@@ -13,20 +13,11 @@
  * 7. Експортувати компонент App за замовчуванням.
  */
 
-import React, { useEffect } from "react";
+import React from "react";
 import { StyleSheet, View, ActivityIndicator, Alert } from "react-native";
 import { WebView } from "react-native-webview";
-import { requestTrackingPermissionsAsync } from "expo-tracking-transparency";
 
 export default function App() {
-  useEffect(() => {
-    (async () => {
-      const { status } = await requestTrackingPermissionsAsync();
-      if (status !== "granted") {
-        console.log("Tracking permission not granted");
-      }
-    })();
-  }, []);
   return (
     <View style={styles.container}>
       <WebView

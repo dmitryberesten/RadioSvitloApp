@@ -17,8 +17,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.yourname.radiosvitlo",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false,
-        "NSUserTrackingUsageDescription": "This app requests permission to track your activity to improve your experience and show relevant content."
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -39,6 +38,6 @@
       }
     },
     "owner": "dmitry_beresten",
-    "plugins": ["expo-tracking-transparency"]
+    "plugins": []
   }
 }
